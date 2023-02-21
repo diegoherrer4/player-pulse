@@ -13,7 +13,7 @@ export const register = async (req, res) => {
       picturePath,
       friends,
       location,
-      occupation,
+      sport,
     } = req.body;
 
     const salt = await bcrypt.genSalt();
@@ -27,9 +27,9 @@ export const register = async (req, res) => {
       picturePath,
       friends,
       location,
-      occupation,
-      viewedProfile: Map.floor(Math.random() * 10000),
-      impressions: Map.floor(Math.random() * 10000),
+      sport,
+      viewedProfile: Math.floor(Math.random() * 10000),
+      impressions: Math.floor(Math.random() * 10000),
     });
     const savedUser = await newUser.save();
     res.status(201).json(savedUser);
@@ -39,7 +39,6 @@ export const register = async (req, res) => {
 };
 
 /* LOGGING IN */
-
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;

@@ -2,7 +2,11 @@ import {
   ManageAccountsOutlined,
   EditOutlined,
   LocationOnOutlined,
+<<<<<<< HEAD
   WorkOutlineOutlined,
+=======
+  SportsSoccerOutlined,
+>>>>>>> new-branch
 } from "@mui/icons-material";
 import { Box, Typography, Divider, useTheme } from "@mui/material";
 import UserImage from "components/UserImage";
@@ -42,7 +46,11 @@ const UserWidget = ({ userId, picturePath }) => {
     firstName,
     lastName,
     location,
+<<<<<<< HEAD
     occupation,
+=======
+    sport,
+>>>>>>> new-branch
     viewedProfile,
     impressions,
     friends,
@@ -87,13 +95,19 @@ const UserWidget = ({ userId, picturePath }) => {
           <Typography color={medium}>{location}</Typography>
         </Box>
         <Box display="flex" alignItems="center" gap="1rem">
+<<<<<<< HEAD
           <WorkOutlineOutlined fontSize="large" sx={{ color: main }} />
           <Typography color={medium}>{occupation}</Typography>
+=======
+          <SportsSoccerOutlined fontSize="large" sx={{ color: main }} />
+          <Typography color={medium}>{sport}</Typography>
+>>>>>>> new-branch
         </Box>
       </Box>
 
       <Divider />
 
+<<<<<<< HEAD
       {/* THIRD ROW */}
       <Box p="1rem 0">
         <FlexBetween mb="0.5rem">
@@ -112,6 +126,8 @@ const UserWidget = ({ userId, picturePath }) => {
 
       <Divider />
 
+=======
+>>>>>>> new-branch
       {/* FOURTH ROW */}
       <Box p="1rem 0">
         <Typography fontSize="1rem" color={main} fontWeight="500" mb="1rem">
