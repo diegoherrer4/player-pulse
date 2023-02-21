@@ -56,7 +56,7 @@ const Navbar = () => {
             },
           }}
         >
-          Sociopedia
+          Player Pulse
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween
