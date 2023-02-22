@@ -45,8 +45,8 @@ const MyPostWidget = ({ picturePath }) => {
       formData.append("picture", image);
       formData.append("picturePath", image.name);
     }
-    const serverUrl = process.env.REACT_APP_SERVER_URL;
-    const response = await fetch(`${serverUrl}/post`, {
+
+    const response = await fetch(`/post`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
       body: formData,
