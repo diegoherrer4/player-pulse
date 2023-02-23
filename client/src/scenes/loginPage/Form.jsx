@@ -64,7 +64,7 @@ const Form = () => {
     formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
-      "https://jade-dark-firefly.cyclic.app/auth/register",
+      "http://jade-dark-firefly.cyclic.app/auth/register",
       {
         method: "POST",
         body: formData,
