@@ -70,6 +70,13 @@ const Form = () => {
         body: formData,
       }
     );
+
+    if (!savedUserResponse.ok) {
+      const error = await savedUserResponse.text();
+      console.error(error);
+      throw new Error(error);
+    }
+
     const savedUser = await savedUserResponse.json();
     onSubmitProps.resetForm();
 
