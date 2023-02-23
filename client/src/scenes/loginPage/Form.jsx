@@ -71,12 +71,6 @@ const Form = () => {
       }
     );
 
-    if (!savedUserResponse.ok) {
-      const error = await savedUserResponse.text();
-      console.error(error);
-      throw new Error(error);
-    }
-
     const savedUser = await savedUserResponse.json();
     onSubmitProps.resetForm();
 
@@ -84,7 +78,6 @@ const Form = () => {
       setPageType("login");
     }
   };
-
   const login = async (values, onSubmitProps) => {
     const loggedInResponse = await fetch(
       "https://jade-dark-firefly.cyclic.app/auth/login",
