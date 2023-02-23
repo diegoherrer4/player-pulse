@@ -61,7 +61,11 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 /* ROUTES WITH FILES */
-app.post("/auth/register", upload.single("picture"), register);
+app.post(
+  "https://jade-dark-firefly.cyclic.app/auth/register",
+  upload.single("picture"),
+  register
+);
 app.post("/post", verifyToken, upload.single("picture"), createPost);
 
 /* ROUTES */
