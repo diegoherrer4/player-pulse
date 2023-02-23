@@ -63,13 +63,10 @@ const Form = () => {
     }
     formData.append("picturePath", values.picture.name);
 
-    const savedUserResponse = await fetch(
-      "https://jade-dark-firefly.cyclic.app/auth/register",
-      {
-        method: "POST",
-        body: formData,
-      }
-    );
+    const savedUserResponse = await fetch("/auth/register", {
+      method: "POST",
+      body: formData,
+    });
 
     const savedUser = await savedUserResponse.json();
     onSubmitProps.resetForm();
@@ -79,14 +76,11 @@ const Form = () => {
     }
   };
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch(
-      "https://jade-dark-firefly.cyclic.app/auth/login",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      }
-    );
+    const loggedInResponse = await fetch("/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(values),
+    });
     const loggedIn = await loggedInResponse.json();
     onSubmitProps.resetForm();
     if (loggedIn) {
