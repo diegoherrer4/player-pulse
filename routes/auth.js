@@ -13,10 +13,10 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage });
+// const upload = multer({ storage });
 
 /* ROUTES WITH FILES */
-router.post("/register", upload.single("picture"), register);
+router.post("/register", register);
 router.post("/login", login);
 
 export default router;
