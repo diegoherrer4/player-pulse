@@ -49,24 +49,20 @@ app.use(
 
 /*  FILE STORAGE */
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "public-server/assets");
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname);
-  },
-});
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, "public-server/assets");
+//   },
+//   filename: function (req, file, cb) {
+//     cb(null, file.originalname);
+//   },
+// });
 
-const upload = multer({ storage });
+// const upload = multer({ storage });
 
-/* ROUTES WITH FILES */
-app.post(
-  "https://jade-dark-firefly.cyclic.app/auth/register",
-  upload.single("picture"),
-  register
-);
-app.post("/post", verifyToken, upload.single("picture"), createPost);
+// /* ROUTES WITH FILES */
+// app.post("/auth/register", upload.single("picture"), register);
+// app.post("/post", verifyToken, upload.single("picture"), createPost);
 
 /* ROUTES */
 app.use("/auth", authRoutes);
