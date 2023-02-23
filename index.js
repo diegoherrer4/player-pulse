@@ -29,12 +29,9 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "./client/build")));
 
 app.get("*", function (_, res) {
-  res.sendFile(
-    path.join(__dirname, "./client/build/index.html"),
-    function (err) {
-      res.status(500).send(err);
-    }
-  );
+  res.sendFile(path.join(__dirname, "./build/index.html"), function (err) {
+    res.status(500).send(err);
+  });
 });
 
 app.use(helmet());
@@ -81,7 +78,7 @@ mongoose
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
     /*ADD DATE ONE TIME */
-    User.insertMany(users);
-    Post.insertMany(posts);
+    // User.insertMany(users);
+    // Post.insertMany(posts);
   })
   .catch((error) => console.log(`${error} did not connect`));
